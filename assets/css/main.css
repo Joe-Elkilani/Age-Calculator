@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1e2f, #3d3d5c);
+    padding: 20px 100px;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+div {
+    padding: 40px 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease;
+}
+
+h2 {
+    font-size: 55px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+input {
+    padding: 20px;
+    border: 2px solid gray;
+    outline: none;
+    border-radius: 10px;
+    width: 350px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 20px 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 500ms,transform 500ms;
+    background: linear-gradient(to right, #ffb347, #ffcc33);
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+button:hover {
+    background: linear-gradient(to right, #ffcc33, #ffb347);
+    transform: scale(1.10);
+}
+
+p {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 2;
+    font-size: 22px;
+    color: #f0e68c;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+p span {
+    display: block;
+}
+
+p strong {
+    color: #fff;
+}
+
+.alert-box {
+    background-color: #ff4c4c;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 500ms, transform 500ms,opacity 500ms;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.alert-box.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    input {
+        width: 100%;
+    }
+    form {
+        flex-direction: column;
+    }
+    button {
+        width: 100%;
+    }
+}
